@@ -1,0 +1,12 @@
+.github/
+.idea/
+.vscode/
+temp_data/
+.pytest_cache/
+__pycache__/
+tests/
+README.md
+.coverage
+appsettings.Development.json
+bin/
+obj/

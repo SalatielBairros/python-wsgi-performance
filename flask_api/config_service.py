@@ -11,6 +11,6 @@ def second_config_service(datas):
     return Repository().execute_action(datas, name_list)
 
 def third_config_service(datas):
-    name_list = ['thind_first', 'third_second']
+    name_list = ['third_first', 'third_second']
 
     return Repository().execute_action(datas, name_list)

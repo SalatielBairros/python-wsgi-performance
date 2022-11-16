@@ -3,7 +3,7 @@ import { sleep, check } from 'k6';
 
 const req_first = {
     method: 'POST',
-    url: 'http://localhost:8991/first',
+    url: 'http://localhost:8991/performance-test/first',
     body: JSON.stringify({
         info: {
             sequence: "first"
@@ -19,7 +19,7 @@ const req_first = {
 
 const req_second = {
     method: 'POST',
-    url: 'http://localhost:8991/second',
+    url: 'http://localhost:8991/performance-test/second',
     body: JSON.stringify({
         info: {
             sequence: "second"
@@ -35,7 +35,7 @@ const req_second = {
 
 const req_third = {
     method: 'POST',
-    url: 'http://localhost:8991/third',
+    url: 'http://localhost:8991/performance-test/third',
     body: JSON.stringify({
         info: {
             sequence: "third"
@@ -49,13 +49,18 @@ const req_third = {
     }
 };
 
+// export const options = {
+//     stages: [
+//         { duration: '1m', target: 20 },
+//         { duration: '5m', target: 300 },
+//         { duration: '1m30s', target: 20 },
+//         { duration: '1m', target: 0 },
+//     ],
+// };
+
 export const options = {
-    stages: [
-        { duration: '1m', target: 20 },
-        { duration: '4m', target: 60 },
-        { duration: '1m30s', target: 20 },
-        { duration: '1m', target: 0 },
-    ],
+    vus: 500,
+    duration: '5m',
 };
 
 export default function () {

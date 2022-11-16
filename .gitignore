@@ -1,0 +1,3 @@
+dotnet_api/bin
+dotnet_api/obj
+__pycache__/
