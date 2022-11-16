@@ -45,3 +45,11 @@ To execute the tests you need to have [Docker](https://www.docker.com/) and [K6]
 The results can be accessed in the folder `results` in excel format. They answer the initial question: Why Flask Development Server is not suitable for production? The answer is: It is not suitable for production, but it is suitable for development. The results show that the Flask Development Server is the fastest server, but it is not suitable for production because it is not thread-safe. The other servers are slower, but they are suitable for production. However, the Waitress server is the slowest of all.
 
 Besides that, the thread-safe problem can be mitigated using class instances instead of global variables and functions.
+
+Using Docker containers, 500 concurrent users for 5 minutes on a Laptop with 16GB RAM and Intel i7-1165, the results were:
+
+1. .NET with Kestrel: 495 requests per second. It was the fastest server, but uses almost 500mb of RAM. It had 100% success rate and processed 150000 requests;
+2. Flask Development Server: 270 requests per second with a total of 82500 requests and a success rate of 89%;
+3. FastAPI with Uvicorn: 82 requests per second with a total of 26409 requests and a success rate of 94%;
+4. Flask with Gunicorn: 33 requests per second with a total of 10565 requests and a success rate of 99%;
+5. Flask with Waitress: 2 requests per second with a total of 6881 requests and a success rate of 59%.
