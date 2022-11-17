@@ -48,7 +48,7 @@ Besides that, the thread-safe problem can be mitigated using class instances ins
 
 Using Docker containers, 500 concurrent users for 5 minutes on a Laptop with 16GB RAM and Intel i7-1165, the results were:
 
-1. .NET with Kestrel: 495 requests per second. It was the fastest server, but uses almost 500mb of RAM. It had 100% success rate and processed 150000 requests;
+1. .NET with Kestrel: 495 requests per second. It was the fastest server with 100% success rate and 150000 processed requests;
 2. Flask Development Server: 270 requests per second with a total of 82500 requests and a success rate of 89%;
 3. FastAPI with Uvicorn: 82 requests per second with a total of 26409 requests and a success rate of 94%;
 4. Flask with Gunicorn: 33 requests per second with a total of 10565 requests and a success rate of 99%;
